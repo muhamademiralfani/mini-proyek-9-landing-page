@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1733235928433" clover="3.2.0">
+  <project timestamp="1733235928434" name="All files">
+    <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7" elements="21" coveredelements="21" complexity="0" loc="14" ncloc="14" packages="4" files="6" classes="6"/>
+    <package name="components">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="BannerBussinessComponent.jsx" path="C:\Users\UsEr\OneDrive\Dokumen\lumoshive\mini-proyek\mini-proyek-9\landing-page\src\components\BannerBussinessComponent.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.AboutComponent">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="TeamsComponent.jsx" path="C:\Users\UsEr\OneDrive\Dokumen\lumoshive\mini-proyek\mini-proyek-9\landing-page\src\components\AboutComponent\TeamsComponent.jsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="38" count="12" type="stmt"/>
+      </file>
+      <file name="WhoWeAreComponent.jsx" path="C:\Users\UsEr\OneDrive\Dokumen\lumoshive\mini-proyek\mini-proyek-9\landing-page\src\components\AboutComponent\WhoWeAreComponent.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.ContactComponent">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="FormContact.jsx" path="C:\Users\UsEr\OneDrive\Dokumen\lumoshive\mini-proyek\mini-proyek-9\landing-page\src\components\ContactComponent\FormContact.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+      </file>
+      <file name="OurOfficeComponent.jsx" path="C:\Users\UsEr\OneDrive\Dokumen\lumoshive\mini-proyek\mini-proyek-9\landing-page\src\components\ContactComponent\OurOfficeComponent.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="layouts">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="FooterLayouts.jsx" path="C:\Users\UsEr\OneDrive\Dokumen\lumoshive\mini-proyek\mini-proyek-9\landing-page\src\layouts\FooterLayouts.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

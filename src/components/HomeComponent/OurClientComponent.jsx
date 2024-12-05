@@ -4,7 +4,7 @@ import quote from '../../assets/ourclient/fa-quote-left.svg';
 
 const OurClientComponent = () => {
   return (
-    <div className='max-w-screen-xl mx-auto mb-20'>
+    <div className='max-w-screen-xl h-screen mx-auto '>
       <div className='w-full my-40'>
         <h1 className='font-bold lg:ml-36 md:ml-0 ml-0 px-4 text-4xl'>What our clients say about us</h1>
       </div>

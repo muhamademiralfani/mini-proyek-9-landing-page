@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import Hands from '../assets/bannerbusiness/Hands.svg';
 import Business from '../assets/bannerbusiness/Logo.svg';

@@ -1,7 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
-import Logo from '../assets/logo.svg';
 import Sms from '../assets/sms-notification.svg';
-import { Link } from 'react-router-dom';
 import Facebook from '../assets/footer/fa-facebook.svg';
 import Twitter from '../assets/footer/fa-twitter.svg';
 import Google from '../assets/footer/fa-google.svg';

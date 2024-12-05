@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.navbar-blur {
+  backdrop-filter: blur(10px); /* Atur tingkat blur sesuai kebutuhan */
+}
+
+.custom-swal-container {
+  z-index: 9999; /* Pastikan alert tampil di atas */
+}
+
+.custom-swal-popup {
+  border-radius: 10px;
+  background-color: #ffffff; /* Warna background popup */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.custom-swal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1a202c; /* Warna teks */
+}
+
+.custom-swal-content {
+  font-size: 1rem;
+  color: #4a5568; /* Warna teks */
+}
+
+.custom-swal-confirm-button,
+.custom-swal-cancel-button {
+  margin: 0 5px; /* Jarak antar tombol */
+}
