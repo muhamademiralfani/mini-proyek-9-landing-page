@@ -9,7 +9,7 @@ import ClientPartnerComponent from '../components/ClientPatnerComponent';
 
 const ContactPage = () => {
   return (
-    <><BannerComponent />
+    <><BannerComponent>We would love to hear from you.</BannerComponent>
       <FormContact />
       <OurOfficeComponent />
       <MaterixBanner />

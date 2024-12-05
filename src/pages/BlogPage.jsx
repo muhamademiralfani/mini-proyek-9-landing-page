@@ -6,7 +6,7 @@ import ArticlesListComponent from '../components/ArticlesListComponent';
 const BlogPage = () => {
   return (
     <>
-      <BannerComponent />
+      <BannerComponent>Read best articles from us.</BannerComponent>
       <ArticlesListComponent />
     </>
   );

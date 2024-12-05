@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import Jeruk from '../../assets/Feature/jeruk.svg';
+import Jeruk from '../../assets/jeruk.png';
 
 const FeatureWorkComponent = () => {
   return (

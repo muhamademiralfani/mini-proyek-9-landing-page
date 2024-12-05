@@ -10,11 +10,9 @@ import BannerComponent from '../components/BannerComponent';
 const OurworkPage = () => {
   return (
     <>
-      <BannerComponent />
+      <BannerComponent>We work with love.</BannerComponent>
       <FeatureWorkComponent />
       <ClientPartnerComponent />
-      <BannerBussinessComponent />
-      <FooterLayouts />
     </>
   );
 };

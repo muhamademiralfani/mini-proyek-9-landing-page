@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useEffect } from 'react';
 import ArticleImage_1 from '../assets/articleslist/articlesimage-1.svg';
 import ArticleImage_2 from '../assets/articleslist/articlesimage-2.svg';
 import ArticleImage_3 from '../assets/articleslist/articlesimage-3.svg';
 import { Link } from 'react-router-dom';
+import { fetchblogs } from '../redux/async/blogSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const ArticlesListComponent = () => {
   const articlesList = [
@@ -24,6 +26,19 @@ const ArticlesListComponent = () => {
     },
   ];
 
+  const dispatch = useDispatch();
+  const { blogs, isSuccess } = useSelector((state) => state.blogs);
+
+  useEffect(() => {
+    dispatch(fetchblogs());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (isSuccess) {
+      dispatch(fetchblogs());
+    }
+  }, [dispatch, isSuccess]);
+
   return (
     <section className='py-40 px-4 '>
       <div className='max-w-screen-xl mx-auto'>
@@ -37,7 +52,7 @@ const ArticlesListComponent = () => {
 
         {/* Articles Grid */}
         <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-20'>
-          {articlesList.map((item, index) => (
+          {blogs.map((item, index) => (
             <article key={index} className='bg-white  overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300'>
               {/* Image Container */}
               <div className='aspect-auto overflow-hidden p-6'>

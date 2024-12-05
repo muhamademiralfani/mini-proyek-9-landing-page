@@ -18,7 +18,6 @@ const HomePage = () => {
   };
   return (
     <>
-      
       <BannerHomeComponent />
       <InfoComponent />
       <OurWorkComponent />
@@ -26,7 +25,6 @@ const HomePage = () => {
       <OurClientComponent />
       <ClinetPatnerComponent />
       <ArticlesListComponent />
-      
     </>
   );
 };

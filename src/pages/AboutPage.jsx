@@ -7,17 +7,15 @@ import MaterixBanner from '../components/MaterixBanner';
 import NavbarLayout from '../layouts/NavbarLayouts';
 import ClientPartnerComponent from '../components/ClientPatnerComponent';
 import FooterLayouts from '../layouts/FooterLayouts';
+import BannerComponent from '../components/BannerComponent';
 
 const AboutPage = () => {
   return (
     <>
       <NavbarLayout />
-      <BannerAboutComponent />
+      <BannerComponent>The work we do, and the people we help.</BannerComponent>
       <WhoWeAreComponent />
-      <TeamsComponent />  
-      <MaterixBanner />
       <ClientPartnerComponent />
-     
     </>
   );
 };
