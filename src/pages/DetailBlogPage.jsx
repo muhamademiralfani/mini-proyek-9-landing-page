@@ -5,8 +5,8 @@ import DetailBlogArticleComponent from '../components/DetailBlogComponent/Detail
 const DetailBlogPage = () => {
   return (
     <>
-      <BannerComponent />
-      <DetailBlogArticleComponent  />
+      <BannerComponent>We write article with love.</BannerComponent>
+      <DetailBlogArticleComponent />
     </>
   );
 };

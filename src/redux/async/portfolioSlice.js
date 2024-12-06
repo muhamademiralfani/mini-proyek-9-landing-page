@@ -4,10 +4,11 @@ import axios from 'axios';
 const API_URL = import.meta.env.VITE_BASE_URL;
 const API_KEY = import.meta.env.API_KEY;
 
-// Fetch blogs with pagination and search
-export const fetchblogs = createAsyncThunk('blogs/fetchPosts', async ({ page = 1, limit = 10, search = '' }, { rejectWithValue }) => {
+
+// Fetch portfolios with pagination and search
+export const fetchPortfolios = createAsyncThunk('portfolios/fetchPosts', async ({ page = 1, limit = 10, search = '' }, { rejectWithValue }) => {
   try {
-    const response = await axios.get(`${API_URL}/blogs`, {
+    const response = await axios.get(`${API_URL}/portfolios`, {
       params: { page, limit, search },
       headers: {
         'Content-Type': 'application/json',
@@ -17,14 +18,14 @@ export const fetchblogs = createAsyncThunk('blogs/fetchPosts', async ({ page = 1
     });
     return response.data; // Expected to match the API response structure
   } catch (error) {
-    return rejectWithValue(error.response?.data || 'Failed to fetch blogs');
+    return rejectWithValue(error.response?.data || 'Failed to fetch portfolios');
   }
 });
 
-// Fetch blog detail by ID
-export const fetchblogDetail = createAsyncThunk('blogs/fetchPostDetail', async (id, { rejectWithValue }) => {
+// Fetch portfolio detail by ID
+export const fetchPortfolioDetail = createAsyncThunk('portfolios/fetchPostDetail', async (id, { rejectWithValue }) => {
   try {
-    const response = await axios.get(`${API_URL}/blogs/${id}`, {
+    const response = await axios.get(`${API_URL}/portfolios/${id}`, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
@@ -33,15 +34,17 @@ export const fetchblogDetail = createAsyncThunk('blogs/fetchPostDetail', async (
     });
     return response.data;
   } catch (error) {
-    return rejectWithValue(error.response?.data || 'Failed to fetch blog detail');
+    return rejectWithValue(error.response?.data || 'Failed to fetch portfolio detail');
   }
 });
 
-const blogsSlice = createSlice({
-  name: 'blogs',
+
+
+const portfoliosSlice = createSlice({
+  name: 'portfolios',
   initialState: {
-    blogs: [], // List of blogs
-    blog: {}, // Single blog detail
+    portfolios: [], // List of portfolios
+    portfolio: {}, // Single portfolio detail
     isSuccess: false, // Request success status
     error: null, // Error messages
     pagination: {
@@ -54,38 +57,38 @@ const blogsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      // Fetch all blogs
-      .addCase(fetchblogs.pending, (state) => {
+      // Fetch all portfolios
+      .addCase(fetchPortfolios.pending, (state) => {
         state.isSuccess = false;
       })
-      .addCase(fetchblogs.fulfilled, (state, action) => {
+      .addCase(fetchPortfolios.fulfilled, (state, action) => {
         state.isSuccess = true;
         state.error = null;
-        state.blogs = action.payload.data || []; // Assign blog list
+        state.portfolios = action.payload.data || []; // Assign portfolio list
         state.pagination.page = parseInt(action.payload.page, 10) || 1; // Ensure page is a number
         state.pagination.limit = parseInt(action.payload.limit, 10) || 10; // Ensure limit is a number
         state.pagination.total = parseInt(action.payload.total, 10) || 0; // Total records
         state.pagination.totalPages = parseInt(action.payload.totalPages, 10) || 1; // Total pages
       })
-      .addCase(fetchblogs.rejected, (state, action) => {
+      .addCase(fetchPortfolios.rejected, (state, action) => {
         state.isSuccess = false;
-        state.error = action.payload || 'Failed to fetch blogs';
+        state.error = action.payload || 'Failed to fetch portfolios';
       })
 
-      // Fetch single blog detail
-      .addCase(fetchblogDetail.pending, (state) => {
+      // Fetch single portfolio detail
+      .addCase(fetchPortfolioDetail.pending, (state) => {
         state.isSuccess = false;
       })
-      .addCase(fetchblogDetail.fulfilled, (state, action) => {
+      .addCase(fetchPortfolioDetail.fulfilled, (state, action) => {
         state.isSuccess = true;
         state.error = null;
-        state.blog = action.payload || {};
+        state.portfolio = action.payload || {};
       })
-      .addCase(fetchblogDetail.rejected, (state, action) => {
+      .addCase(fetchPortfolioDetail.rejected, (state, action) => {
         state.isSuccess = false;
-        state.error = action.payload || 'Failed to fetch blog detail';
+        state.error = action.payload || 'Failed to fetch portfolio detail';
       });
   },
 });
 
-export default blogsSlice.reducer;
+export default portfoliosSlice.reducer;

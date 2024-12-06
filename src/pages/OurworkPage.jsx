@@ -10,7 +10,7 @@ import BannerComponent from '../components/BannerComponent';
 const OurworkPage = () => {
   return (
     <>
-      <BannerComponent>We work with love.</BannerComponent>
+      <BannerComponent>The work we do, and the people we help.</BannerComponent>
       <FeatureWorkComponent />
       <ClientPartnerComponent />
     </>

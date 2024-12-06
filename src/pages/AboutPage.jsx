@@ -8,6 +8,7 @@ import NavbarLayout from '../layouts/NavbarLayouts';
 import ClientPartnerComponent from '../components/ClientPatnerComponent';
 import FooterLayouts from '../layouts/FooterLayouts';
 import BannerComponent from '../components/BannerComponent';
+import TeamComponent from '../components/AboutComponent/TeamComponent';
 
 const AboutPage = () => {
   return (
@@ -15,6 +16,7 @@ const AboutPage = () => {
       <NavbarLayout />
       <BannerComponent>The work we do, and the people we help.</BannerComponent>
       <WhoWeAreComponent />
+      <TeamComponent />
       <ClientPartnerComponent />
     </>
   );

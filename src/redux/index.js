@@ -3,6 +3,10 @@ import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import blogReducer from './async/blogSlice';
+import testimonialsReducer from './async/testimonialSlice';
+import contactReducer from './async/contactSlice';
+import portfolioReducer from './async/portfolioSlice';
+import teamReducer from './async/teamSlice';
 import storage from 'redux-persist/lib/storage';
 
 // Create a persist configuration
@@ -14,6 +18,10 @@ const persistConfig = {
 // Combine your reducers
 const rootReducer = combineReducers({
   blogs: blogReducer,
+  portfolios: portfolioReducer,
+  testimonials: testimonialsReducer,
+  contact: contactReducer,
+  teams: teamReducer,
 });
 
 // Create a persisted reducer

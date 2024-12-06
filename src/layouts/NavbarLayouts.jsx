@@ -67,7 +67,7 @@ const NavbarLayouts = () => {
         {/* Mobile Full-Screen Menu */}
         {isMobile && isMobileMenuOpen && (
           <div className='fixed inset-0 bg-black text-white flex flex-col items-center justify-center z-50' style={{ backgroundColor: '#FDCA09' }}>
-            <button className='absolute top-4 right-4 text-white text-2xl' onClick={closeMenus}>
+            <button className='absolute top-4 right-4 text-white text-2xl  p-4' onClick={closeMenus}>
               &times;
             </button>
             <h1 className='text-2xl mb-6 font-semibold'>Your Name</h1>
