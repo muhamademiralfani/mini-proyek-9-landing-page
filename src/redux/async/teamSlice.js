@@ -2,15 +2,14 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const API_URL = import.meta.env.VITE_BASE_URL;
-const API_KEY= import.meta.env.API_KEY;
 
 // Fetch team data
-export const fetchTeams = createAsyncThunk('teams/fetchTeams', async (_, { rejectWithValue }) => {
+export const fetchTeams = createAsyncThunk('teams/fetchTeams', async ({ rejectWithValue }) => {
   try {
     const response = await axios.get(`${API_URL}/teams?usernames[0]=rikkriuk&usernames[1]=emir&usernames[2]=desup321`, {
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': API_KEY,
+        'x-api-key': '98423181-6712-46ce-9a92-260d8932dd03',
       },
     });
     return response.data.data; // Extract team data

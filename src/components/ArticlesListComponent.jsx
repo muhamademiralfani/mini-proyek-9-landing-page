@@ -9,12 +9,16 @@ const ArticlesListComponent = () => {
 
   const [searchQuery, setSearchQuery] = useState('');
 
+  // Fallback untuk pagination jika undefined
+  const page = pagination?.page || 1;
+  const limit = pagination?.limit || 10;
+
   useEffect(() => {
-    dispatch(fetchblogs({ page: pagination.page, limit: pagination.limit, search: searchQuery }));
-  }, [dispatch, pagination.page, pagination.limit, searchQuery]);
+    dispatch(fetchblogs({ page, limit, search: searchQuery }));
+  }, [dispatch, page, limit, searchQuery]);
 
   const handleSearch = () => {
-    dispatch(fetchblogs({ page: 1, limit: pagination.limit, search: searchQuery }));
+    dispatch(fetchblogs({ page: 1, limit, search: searchQuery }));
   };
 
   const handleNavigate = (slug) => {

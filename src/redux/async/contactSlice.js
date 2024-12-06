@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const API_URL = import.meta.env.VITE_BASE_URL;
-const API_KEY = import.meta.env.API_KEY;
 
 // POST contact data
 export const postContact = createAsyncThunk(
@@ -12,7 +11,7 @@ export const postContact = createAsyncThunk(
       const response = await axios.post(`${API_URL}/contact`, formData, {
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key': API_KEY,
+          'x-api-key': '98423181-6712-46ce-9a92-260d8932dd03',
         },
       });
       return response.data; // Response expected from API

@@ -2,8 +2,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const API_URL = import.meta.env.VITE_BASE_URL;
-const API_KEY = import.meta.env.API_KEY;
-
 
 // Fetch portfolios with pagination and search
 export const fetchPortfolios = createAsyncThunk('portfolios/fetchPosts', async ({ page = 1, limit = 10, search = '' }, { rejectWithValue }) => {
@@ -13,7 +11,7 @@ export const fetchPortfolios = createAsyncThunk('portfolios/fetchPosts', async (
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'x-api-key': API_KEY,
+        'x-api-key': '98423181-6712-46ce-9a92-260d8932dd03',
       },
     });
     return response.data; // Expected to match the API response structure
@@ -29,7 +27,7 @@ export const fetchPortfolioDetail = createAsyncThunk('portfolios/fetchPostDetail
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'x-api-key': API_KEY,
+        'x-api-key': '98423181-6712-46ce-9a92-260d8932dd03',
       },
     });
     return response.data;
@@ -37,8 +35,6 @@ export const fetchPortfolioDetail = createAsyncThunk('portfolios/fetchPostDetail
     return rejectWithValue(error.response?.data || 'Failed to fetch portfolio detail');
   }
 });
-
-
 
 const portfoliosSlice = createSlice({
   name: 'portfolios',

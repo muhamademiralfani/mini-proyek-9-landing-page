@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const API_URL = import.meta.env.VITE_BASE_URL;
-const API_KEY = import.meta.env.API_KEY;
 
 // Fetch blogs with pagination and search
 export const fetchblogs = createAsyncThunk('blogs/fetchPosts', async ({ page = 1, limit = 10, search = '' }, { rejectWithValue }) => {
@@ -12,7 +11,7 @@ export const fetchblogs = createAsyncThunk('blogs/fetchPosts', async ({ page = 1
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'x-api-key': API_KEY,
+        'x-api-key': '98423181-6712-46ce-9a92-260d8932dd03',
       },
     });
     return response.data; // Expected to match the API response structure
@@ -28,7 +27,7 @@ export const fetchblogDetail = createAsyncThunk('blogs/fetchPostDetail', async (
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'x-api-key': API_KEY,
+        'x-api-key': '98423181-6712-46ce-9a92-260d8932dd03',
       },
     });
     return response.data;
@@ -61,17 +60,16 @@ const blogsSlice = createSlice({
       .addCase(fetchblogs.fulfilled, (state, action) => {
         state.isSuccess = true;
         state.error = null;
-        state.blogs = action.payload.data || []; // Assign blog list
-        state.pagination.page = parseInt(action.payload.page, 10) || 1; // Ensure page is a number
-        state.pagination.limit = parseInt(action.payload.limit, 10) || 10; // Ensure limit is a number
-        state.pagination.total = parseInt(action.payload.total, 10) || 0; // Total records
-        state.pagination.totalPages = parseInt(action.payload.totalPages, 10) || 1; // Total pages
+        state.blogs = action.payload.data || [];
+        state.pagination.page = parseInt(action.payload.page, 10) || 1;
+        state.pagination.limit = parseInt(action.payload.limit, 10) || 10;
+        state.pagination.total = parseInt(action.payload.total, 10) || 0;
+        state.pagination.totalPages = parseInt(action.payload.totalPages, 10) || 1;
       })
       .addCase(fetchblogs.rejected, (state, action) => {
         state.isSuccess = false;
         state.error = action.payload || 'Failed to fetch blogs';
       })
-
       // Fetch single blog detail
       .addCase(fetchblogDetail.pending, (state) => {
         state.isSuccess = false;
